@@ -1,0 +1,33 @@
+public static int[] sort(int[] number)
+    {
+        int max, min, i,k;
+        for(i=0;i<number.length-i;i++)
+        {
+            max=i;
+            min=i; 
+            //find min and max
+            for(k=i;k<number.length-i;k++)
+            {
+                if(number[k]>number[max])
+                {
+                    max=k;
+                }
+                else{
+                    if(number[k]<number[min])
+                    {
+                        min=k;
+                    }
+                }
+            }
+            //max swap   
+            swap(max,number.length-i-1,number);
+            if(number.length-1-i==min)
+            {
+                min=max;
+            }
+            //min swap
+            swap(min,i,number);
+
+        }
+        return number;
+    }
